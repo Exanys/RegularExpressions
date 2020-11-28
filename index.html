@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="cs">
+
+<head>
+    <title>Validace formuláře</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+        integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+</head>
+
+<body>
+    <header class="jumbotron text-center bg-primary">
+        <h1 class="display-1 text-light">Validace formuláře</h1>
+    </header>
+    <main class="container">
+        <h2 class="mb-4 p-3 bg-info text-uppercase text-center text-light">Dotazník studenta</h2>
+        <div class="container">
+            <form action="" class="needs-validation" novalidate>
+                <!-- Text input-->
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="jmeno">Jméno</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="jmeno" name="jmeno" placeholder="Křestní jméno studenta" class="form-control"
+                            required pattern="^[A-ZÁČĎÉĚÍŇŘŠŤŮÚÝŽ][a-záčďéěíňóřšťůúýž]+$">
+                        <div class="valid-feedback">Platný údaj.</div>
+                        <div class="invalid-feedback">Prosím, vyplňte správně křestní jméno.</div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="prijmeni">Příjmení</label>
+                    <div class="col-sm-8">
+                        <input id="prijmeni" name="prijmeni" placeholder="Příjmení studenta" class="form-control"
+                            required pattern="^[A-ZÁČĎÉĚÍŇŘŠŤŮÚÝŽ][a-záčďéěíňóřšťůúýž]+$" type="text">
+                        <div class="valid-feedback">Platný údaj.</div>
+                        <div class="invalid-feedback">Prosím, vyplňte správně příjmení.</div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="narozeni">Datum narození</label>
+                    <div class="col-sm-8">
+                        <input id="narozeni" name="narozeni" placeholder="dd.mm.yyyy" class="form-control" type="date" pattern="^([1-9]|[12]\d|3[01])\.([1-9]|1[12])\.(199\d|20[0-2]\d)$">
+                        <div class="valid-feedback">Platný údaj.</div>
+                        <div class="invalid-feedback">Prosím, vyplňte správně datum narození.</div>
+                    </div>
+                </div>
+
+                <!-- Multiple Radios (inline) -->
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="obor">Studijní obor</label>
+                    <div class="col-sm-8">
+                        <div class="form-check form-check-inline">
+                            <input name="obor" id="obor-0" value="Informační technologie" checked="checked" type="radio"
+                                class="form-check-input">
+                            <label class="form-check-label" for="obor-0">Informační technologie</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input name="obor" id="obor-1" value="Strojírenství" type="radio" class="form-check-input">
+                            <label class="form-check-label" for="obor-1">Strojírenství</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input name="obor" id="obor-2" value="Umělecké obory" type="radio" class="form-check-input">
+                            <label class="form-check-label" for="obor-2">Umělecké obory</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Select Basic -->
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="trida">Třída</label>
+                    <div class="col-sm-8">
+                        <select id="trida" name="trida" class="form-control">
+                            <option value="it1">IT1</option>
+                            <option value="it2">IT2</option>
+                            <option value="it3">IT3</option>
+                            <option value="it4">IT4</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="absence">Absence</label>
+                    <div class="col-sm-8">
+                        <input id="absence" name="absence" placeholder="0" class="form-control" type="number">
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="prumer">Průměrná známka</label>
+                    <div class="col-sm-8">
+                        <input id="prumer" name="prumer" class="form-control" type="text" pattern="^([1-4](\.\d{1,2})?|5)$" required>
+                        <div class="valid-feedback">Platný údaj.</div>
+                        <div class="invalid-feedback">Prosím, zadejte číslo v rozsahu 1 až 5.</div>
+                    </div>
+                </div>
+
+                <!-- Multiple Checkboxes (inline) -->
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="jazyky">Znalost jazyků</label>
+                    <div class="col-sm-8">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="jazyky" id="jazyky-0" value="anj">
+                            <label class="form-check-label" for="jazyky-0">angličtina</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="jazyky" id="jazyky-1" value="nem">
+                            <label class="form-check-label" for="jazyky-1">němčina</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="jazyky" id="jazyky-2" value="rus">
+                            <label class="form-check-label" for="jazyky-2">ruština</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Textarea -->
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="poznamka">Poznámka</label>
+                    <div class="col-sm-8">
+                        <textarea class="form-control" id="poznamka" rows="5"
+                            name="poznamka">Zde zapište poznámku týkající se studenta</textarea>
+                    </div>
+                </div>
+
+                <!-- Prepended text-->
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="username">Uživatelské jméno (Moodle)</label>
+                    <div class="col-sm-8">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                            </div>
+                            <input type="text" class="form-control" name="username" id="username" placeholder="?" pattern="^(sv[ab]|it|uo)(1[6-9]|20)(0[1-9]|[1-3]\d|40)$"
+                                aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Zadejte správné uživatelské jméno
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prepended text-->
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="username">IP adresa</label>
+                    <div class="col-sm-8">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend">IPv4</span>
+                            </div>
+                            <input type="text" class="form-control" name="ip" id="ip" placeholder="192.168.?.?" pattern="^192\.168\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])$"
+                                aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Zadejte správnou IP adresu
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prepended text-->
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="username">MAC adresa</label>
+                    <div class="col-sm-8">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend">MAC</span>
+                            </div>
+                            <input type="text" class="form-control" name="mac" id="mac" placeholder="?" pattern="^([A-Fa-f0-9]{2}-){5}[A-Fa-f0-9]{2}$"
+                                aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Zadejte správnou MAC adresu
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Appended text-->
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="emailskolni">Email</label>
+                    <div class="col-sm-8">
+                        <div class="input-group">
+                            <input type="email" class="form-control" id="email" placeholder="student@sspu-opava.cz"
+                                aria-describedby="inputGroupAppend" pattern="^(sv[ab]|it|uo)(1[6-9]|20)(0[1-9]|[1-3]\d|40)@sspu-opava.cz$" required>
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="inputGroupAppend">e-mail</span>
+                            </div>
+                            <div class="invalid-feedback">
+                                Zadejte správný email
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Password input-->
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="heslo">Heslo</label>
+                    <div class="col-sm-8">
+                        <input id="heslo" name="heslo" placeholder="Zadejte heslo" class="form-control" pattern="^(?=.*[0-9].{3,})(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}\[\]:;<>,.?\\\/~_+-=|])(?!.*?\s).{8,}$" type="password" required>
+                        <div class="valid-feedback">Platný údaj.</div>
+                        <div class="invalid-feedback">Prosím, zadejte heslo s velkými i malými písmeny, minimalně třemi číslicemi a jedním speciálním znakem.</div>
+                    </div>
+                </div>
+
+                <!-- File Button -->
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="foto">Fotografie</label>
+                    <div class="col-sm-8">
+                        <input id="foto" name="foto" class="form-control-file" type="file">
+                    </div>
+                </div>
+
+                <!-- Prepended checkbox -->
+                <div class="form-group row">
+                    <div class="offset-sm-4 col-sm-8 input-group mb-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <input type="checkbox">
+                            </div>
+                        </div>
+                        <input id="souhlas" name="souhlas" class="form-control"
+                            placeholder="Souhlasím s využitím fotografií" type="text">
+
+                    </div>
+                </div>
+
+                <!-- Button (Double) -->
+                <div class="form-group row">
+                    <div class="offset-sm-4 col-sm-8">
+                        <button type="submit" id="submit" name="submit" class="btn btn-success">
+                            Odeslat
+                        </button>
+                        <button type="reset" id="storno" name="storno" class="btn btn-danger">
+                            Stornovat
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <hr>
+        <div id="result" class="alert"></div>
+    </main>
+    <footer class="container-fluid text-center">
+        <hr>
+        <p>&copy; 2020 - IT2</p>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+        integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+    <script>
+        // Disable form submissions if there are invalid fields
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Get the forms we want to add validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+</body>
+
+</html>
